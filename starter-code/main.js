@@ -1,19 +1,33 @@
-var cardOne = "queen";
-var cardTwo = "queen";
-var cardThree = "king";
-var cardFour = "king";
+var cardVal = ['queen', 'queen', 'king', 'king'];
+var cardsInPlay = [];
 
-var creatBoard = function(cardNum){
-	for(var i = 0; i < cardNum; i++){
+
+var createBoard = function(){
+	for(var i = 0; i < cardVal.length; i++){
 		var cardPop = document.createElement('div');
 		cardPop.className = 'card';
 		document.getElementsByClassName('board')[0].appendChild(cardPop);
+
+		cardPop.setAttribute("data-card", cardVal[i]);
+		cardPop.addEventListener('click', isTwoCards);
 	}
 }
-creatBoard(4);
 
 
-/*var cardPop = document.createElement('div');
-cardPop.className = 'card';
-document.getElementsByClassName('board')[0].appendChild(cardPop);
-*/
+var isMatch = function(){
+	if(cardsInPlay[0] === cardsInPlay[1]){
+		return true;
+	}else{
+		return false;
+	}
+}
+
+var isTwoCards = function(){
+	cardsInPlay.push(this.getAttribute('data-card'));
+	if(cardsInPlay.length === 2){
+		isMatch();//WHAT???????
+		cardsInPlay = [];
+	}
+}
+
+createBoard();
