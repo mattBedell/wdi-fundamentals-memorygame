@@ -1,0 +1,58 @@
+[1mdiff --git a/starter-code/index.html b/starter-code/index.html[m
+[1mindex 05fbe9f..831f873 100644[m
+[1m--- a/starter-code/index.html[m
+[1m+++ b/starter-code/index.html[m
+[36m@@ -14,18 +14,11 @@[m
+ 		<h1>Memory Game</h1>[m
+ 		<h2>A card game to test your brainbox!</h2>[m
+ 	</header>[m
+[31m-	<section class="contT">[m
+ 		<h3>Instructions</h3>[m
+ 		<p><a name="instructHere"></a>Concentration, also known as Match Match, Memory, Pelmanism, Shinkei-suijaku, Pexeso or simply Pairs, is a card game in which all the cards are laid face down on a surface and two cards are flipped face up over each turn. The object of the game is to turn over pairs of matching cards.</p>[m
+[31m-	</section>[m
+[31m-[m
+ 	<main>[m
+[31m-		<div class="board">[m
+[32m+[m		[32m<div class="board" id="game-board">[m
+ 			<a name="gameHere"></a>[m
+[31m-			<div class="card"></div>[m
+[31m-			<div class="card"></div>[m
+[31m-			<div class="card"></div>[m
+[31m-			<div class="card"></div>[m
+ 		</div>[m
+ 	</main>[m
+ [m
+[36m@@ -33,4 +26,5 @@[m
+ 		<p>Created with <span class="sym">&#9851</span> by <span class="name">Matt Bedell</span></p>[m
+ 	</footer>[m
+ </body>[m
+[32m+[m[32m<script src="main.js"></script>[m
+ </html>[m
+\ No newline at end of file[m
+[1mdiff --git a/starter-code/main.js b/starter-code/main.js[m
+[1mindex c71a984..0e38ecb 100644[m
+[1m--- a/starter-code/main.js[m
+[1m+++ b/starter-code/main.js[m
+[36m@@ -1 +1,19 @@[m
+[31m-console.log("JS file is connected to HTML! Woo!")[m
+\ No newline at end of file[m
+[32m+[m[32mvar cardOne = "queen";[m
+[32m+[m[32mvar cardTwo = "queen";[m
+[32m+[m[32mvar cardThree = "king";[m
+[32m+[m[32mvar cardFour = "king";[m
+[32m+[m
+[32m+[m[32mvar creatBoard = function(cardNum){[m
+[32m+[m	[32mfor(var i = 0; i < cardNum; i++){[m
+[32m+[m		[32mvar cardPop = document.createElement('div');[m
+[32m+[m		[32mcardPop.className = 'card';[m
+[32m+[m		[32mdocument.getElementsByClassName('board')[0].appendChild(cardPop);[m
+[32m+[m	[32m}[m
+[32m+[m[32m}[m
+[32m+[m[32mcreatBoard(4);[m
+[32m+[m
+[32m+[m
+[32m+[m[32m/*var cardPop = document.createElement('div');[m
+[32m+[m[32mcardPop.className = 'card';[m
+[32m+[m[32mdocument.getElementsByClassName('board')[0].appendChild(cardPop);[m
+[32m+[m[32m*/[m
+\ No newline at end of file[m

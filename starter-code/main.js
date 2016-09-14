@@ -4,6 +4,7 @@ var cardsInPlay = [];
 
 
 
+
 var createBoard = function(){
 	for(var i = 0; i < cardVal.length; i++){
 		var cardPop = document.createElement('div');
@@ -19,7 +20,14 @@ var createBoard = function(){
 	}
 }
 
-
+var shuffleDeck = function(){
+	for(var i = 0; i < cardVal.length; i++){
+		var storeVal = cardVal[i];
+		var ranIndex = Math.floor(Math.random() * cardVal.length);
+		cardVal[i] = cardVal[ranIndex];
+		cardVal[ranIndex] = storeVal;
+	}
+}
 var isMatch = function(){
 	if(cardsInPlay.length === 2){
 		if(cardsInPlay[0] === cardsInPlay[1]){
@@ -51,5 +59,5 @@ var cardControl = function(){
 			break;
 	}
 }
-
+shuffleDeck();
 createBoard();
