@@ -49,7 +49,7 @@ var isMatch = function(){
 var cardControl = function(){
 	cardsInPlay.push(this.getAttribute('data-card'));
 	cardClick.push(this);
-
+	this.style.backgroundSize = "100% 100%";
 	switch(this.getAttribute('data-card')){
 		case 'queen':
 			this.style.backgroundImage = "url('assets/queenImage.png')";
