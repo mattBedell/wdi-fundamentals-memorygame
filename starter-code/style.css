@@ -16,8 +16,12 @@
 h1 {
 	color: rgba(2,132,130,1);
 }
-h3 {
+.instruct {
 	color: #ffd700;
+}
+.matchScore {
+	text-align: center;
+	background-color: gray;
 }
 .name {
 	color: #ff0000;
