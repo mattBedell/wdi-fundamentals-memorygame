@@ -62,6 +62,7 @@ var isMatch = function(){
 			document.querySelector(".matchScore").innerHTML = "Matches: " + scoreMatch + "/" + (cardVal.length / 2);
 
 			if(scoreMatch === cardVal.length/2){
+				document.querySelector(".matchScore").innerHTML = "YOU WIN!";
 				alert("You Win!");
 			}
 			return true;
